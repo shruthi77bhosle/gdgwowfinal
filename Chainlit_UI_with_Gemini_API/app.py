@@ -8,13 +8,13 @@ from langchain_google_genai import GoogleGenerativeAI, HarmBlockThreshold, HarmC
 
 import chainlit as cl
 import os
-api_key = os.getenv("API")
+api_key = os.getenv("AIzaSyCEQ931Qpyw5GKTgZUQsdXh3ga7TeoHHU8")
 #genai.configure(api_key=os.environ["API"])
 @cl.on_chat_start
 async def on_chat_start():
     #model = ChatOpenAI(streaming=True)
     
-    model = GoogleGenerativeAI(model="gemini-pro",google_api_key=api_key,
+    model = GoogleGenerativeAI(model="gemini-1.5-flash",google_api_key=api_key,
     safety_settings={
         HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: HarmBlockThreshold.BLOCK_NONE,
     },
